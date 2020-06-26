@@ -3,7 +3,7 @@ description: 'Execute remote SSH commands with ssh private/public keys'
 author: 'itkdev@mkb.aarhus.dk'
 inputs:
   command:
-    description: "Commands to execute."
+    description: "Command(s) to execute."
     required: true
   host:
     description: "FQDN - Server hostname (default: localhost)."
@@ -21,7 +21,7 @@ inputs:
     description: "File Location or string that contains a private key"
     required: true
   args:
-    description: "SSH parameters for example: -tt."
+    description: "SSH parameters"
     required: false
 
 runs:
