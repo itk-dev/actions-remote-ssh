@@ -1,6 +1,6 @@
 # Remote SSH Commands
 
-![](https://github.com/itk-dev/actions-remote-ssh/workflows/test/badge.svg)
+![](https://github.com/itk-dev/actions-remote-ssh/workflows/Test%20SSH%20action/badge.svg)
 
 Action to run a command on a remote server using SSH.
 
