@@ -1,0 +1,33 @@
+name: 'Execute remote SSH commands'
+description: 'Execute remote SSH commands with ssh private/public keys'
+author: 'itkdev@mkb.aarhus.dk'
+inputs:
+  command:
+    description: "Commands to execute."
+    required: true
+  host:
+    description: "FQDN - Server hostname (default: localhost)."
+    required: false
+    default: "localhost"
+  user:
+    description: "Remote SSH username (default: deploy)"
+    required: false
+    default: "deploy"
+  port:
+    description: "Remote port number (default 22)."
+    required: false
+    default: "22"
+  key:
+    description: "File Location or string that contains a private key"
+    required: true
+  args:
+    description: "SSH parameters for example: -tt."
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  color: "green"
+  icon: "lock"
