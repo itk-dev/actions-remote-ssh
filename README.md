@@ -19,6 +19,14 @@ Action to run a command on a remote server using SSH.
 
 You should use GitHub secrest to store the host and private ssh key and the key should be without password.
 
+## Secrets
+
+These options should be create using secrets.
+
+* HOST
+* PRIVATE_KEY
+* PUBLIC_KEY_CERT
+
 ## Options
 
 * command: Command(s) to execute.
@@ -26,4 +34,5 @@ You should use GitHub secrest to store the host and private ssh key and the key 
 * user: Remote SSH username (default: deploy)
 * port: Remote port number (default 22)
 * key: File Location or string that contains a private key
+* cert: Public signed certificate
 * args: Extra SSH parameters

@@ -20,6 +20,9 @@ inputs:
   key:
     description: "File Location or string that contains a private key"
     required: true
+  cert:
+    description: "Public signed certificate"
+    required: true
   args:
     description: "SSH parameters"
     required: false
