@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Remote command execution test
-        uses: itk-dev/actions-remote-ssh
+        uses: itk-dev/actions-remote-ssh@master
         with:
           command: |
             ls -a /
