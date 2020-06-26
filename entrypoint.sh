@@ -12,8 +12,6 @@ chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/id_rsa"
 chmod 600 "$SSHPATH/id_rsa-cert.pub"
 
-cat $SSHPATH/id_rsa-cert.pub
-
 # Create known hosts.
 touch "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/known_hosts"
@@ -26,6 +24,5 @@ ssh-add
 echo "$INPUT_COMMAND exit" > /sshcmd.sh
 cat /sshcmd.sh
 
-echo Start Run Command
-
+# Run the command remote
 sh -c "ssh $INPUT_ARGS -i $SSHPATH/id_rsa -o StrictHostKeyChecking=no -p $INPUT_PORT -l ${INPUT_USER} ${INPUT_HOST} < /sshcmd.sh"
