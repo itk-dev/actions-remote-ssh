@@ -14,7 +14,8 @@ Action to run a command on a remote server using SSH.
       ls -a /
       whoami
     host: ${{ secrets.HOST }}
-    key: ${{ secrets.PRIVATE_KEY}}
+    key: ${{ secrets.PRIVATE_KEY }}
+    cert: ${{ secrets.PUBLIC_KEY_CERT }}
 ```
 
 You should use GitHub secrest to store the host and private ssh key and the key should be without password.

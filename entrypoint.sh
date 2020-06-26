@@ -2,7 +2,7 @@
 
 set -eu
 
-SSHPATH="$HOME/.ssh"
+SSHPATH="/root/.ssh"
 mkdir -p "$SSHPATH"
 
 # Setup ssh keys.
@@ -12,12 +12,14 @@ chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/id_rsa"
 chmod 600 "$SSHPATH/id_rsa-cert.pub"
 
+cat $SSHPATH/id_rsa-cert.pub
+
 # Create known hosts.
 touch "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/known_hosts"
 
 # Start agent and add cert
-ssh-agent -s
+eval `ssh-agent -s`
 ssh-add
 
 # Build remote command.
