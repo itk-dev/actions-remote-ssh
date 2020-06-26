@@ -1,0 +1,20 @@
+---
+on: push
+
+name: Test SSH action
+
+env:
+  TEST_ENV: ITKDev
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remote command execution test
+        uses: itk-dev/actions-remote-ssh
+        with:
+          command: |
+            ls -a /
+            echo "env_var:$TEST_ENV"
+          host: ${{ secrets.HOST }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          args: "-tt -vvv"
