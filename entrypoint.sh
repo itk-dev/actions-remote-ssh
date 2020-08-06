@@ -9,8 +9,10 @@ if [ "$GITHUB_REF" != "refs/heads/master" ] || ["$GITHUB_REF" != "refs/heads/dev
 fi
 
 
+
 SSHPATH="/root/.ssh"
 mkdir -p "$SSHPATH"
+
 
 # Setup ssh keys.
 echo "$INPUT_KEY" > "$SSHPATH/id_rsa"
