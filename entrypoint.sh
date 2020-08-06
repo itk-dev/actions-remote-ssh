@@ -8,6 +8,7 @@ if [ "$GITHUB_REF" != "refs/heads/master" ] || ["$GITHUB_REF" != "refs/heads/dev
     exit -1;
 fi
 
+
 SSHPATH="/root/.ssh"
 mkdir -p "$SSHPATH"
 
