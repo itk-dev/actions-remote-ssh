@@ -2,6 +2,12 @@
 
 set -eu
 
+# Lock down action to only these branchs to prevent mis-ussaged.
+if [ "$GITHUB_REF" != "refs/heads/master" ] || ["$GITHUB_REF" != "refs/heads/develop"] || ["$GITHUB_REF" != "refs/heads/release"]; then
+    echo "Deployment not allowed on this branch!"
+    exit -1;
+fi
+
 SSHPATH="/root/.ssh"
 mkdir -p "$SSHPATH"
 
