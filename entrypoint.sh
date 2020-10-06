@@ -3,7 +3,7 @@
 set -eu
 
 # Lock down action to only these branchs to prevent mis-ussaged.
-if [ "$GITHUB_REF" == "refs/heads/master" ] || ["$GITHUB_REF" == "refs/heads/develop"] || ["$GITHUB_REF" == "refs/heads/release"]; then
+if [ "$GITHUB_REF" == "refs/heads/master" ] || [ "$GITHUB_REF" == "refs/heads/develop" ] || [ "$GITHUB_REF" == "refs/heads/release" ]; then
   SSHPATH="/root/.ssh"
   mkdir -p "$SSHPATH"
 
