@@ -29,6 +29,6 @@ if [ "$GITHUB_REF" == "refs/heads/master" ] || [ "$GITHUB_REF" == "refs/heads/de
   # Run the command remote
   sh -c "ssh $INPUT_ARGS -i $SSHPATH/id_rsa -o StrictHostKeyChecking=no -p $INPUT_PORT -l ${INPUT_USER} ${INPUT_HOST} < /sshcmd.sh"
 else
-  echo "Deployment not allowed on this branch!"
+  echo "Deployment not allowed on this branch ($GITHUB_REF)"
   exit 1;
 fi
