@@ -31,7 +31,7 @@ if [ "$GITHUB_REF" == "refs/heads/master" ] ||
   cat /sshcmd.sh
 
   # Run the command remote
-  sh -c "ssh -vvv $INPUT_ARGS -i $SSHPATH/id_rsa -o StrictHostKeyChecking=no -p $INPUT_PORT -l ${INPUT_USER} ${INPUT_HOST} < /sshcmd.sh"
+  sh -c "ssh $INPUT_ARGS -i $SSHPATH/id_rsa -o StrictHostKeyChecking=no -o 'PubkeyAcceptedKeyTypes +ssh-rsa-cert-v01@openssh.com' -o 'PubKeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com' -p $INPUT_PORT -l ${INPUT_USER} ${INPUT_HOST} < /sshcmd.sh"
 else
   echo "Deployment not allowed on this branch ($GITHUB_REF)"
   exit 1;
